@@ -9,7 +9,13 @@
 # No final, nosso programa deve exibir uma mensagem para o usuário, caso ele tenha inserido o CPF inválido ou então apenas deve printar o CPF correto já só com número.
 # """
 
-cpf = input("Insira seu CPF (digite apenas números):").strip().replace('.', '').replace('-', '').replace('', '')
+cpf = (
+    input("Insira seu CPF (digite apenas números):")
+    .strip()
+    .replace(".", "")
+    .replace("-", "")
+    .replace("", "")
+)
 
 if not cpf.isnumeric() or len(cpf) < 11:
     print("Digite seu CPF corretamente e digite apenas números")

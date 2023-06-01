@@ -17,9 +17,19 @@
 
 # cada item da lista dos produtos corresponde a quantidade de vendas no mês e preço, nessa ordem
 
-###### ATENÇÃO: resolvi criar um código que mostre o aumento de 10% de imposto para cada produto, independente de ser livro ou não
+# ATENÇÃO: resolvi criar um código que mostre o aumento de 10% de imposto para cada produto, independente de ser livro ou não
 
-produtos = ['computador', 'livro', 'tablet', 'celular', 'tv', 'ar condicionado', 'alexa', 'máquina de café', 'kindle']
+produtos = [
+    "computador",
+    "livro",
+    "tablet",
+    "celular",
+    "tv",
+    "ar condicionado",
+    "alexa",
+    "máquina de café",
+    "kindle",
+]
 
 produtos_ecommerce = [
     [10000, 2500],
@@ -30,10 +40,11 @@ produtos_ecommerce = [
     [7200, 2500],
     [200, 800],
     [3300, 700],
-    [1900, 400]
+    [1900, 400],
 ]
 
-print(f'Lista sem aplicação do imposto: {produtos_ecommerce}')
+print(f"Lista sem aplicação do imposto: {produtos_ecommerce}")
+
 
 def calcular_custo_por_produto(lista):
     custo_por_produto = []
@@ -41,26 +52,39 @@ def calcular_custo_por_produto(lista):
         custo_por_produto.append(lista[i][0] * lista[i][1])
     return custo_por_produto
 
+
 def calcular_custo_de_estoque(lista):
     custo_por_produto = calcular_custo_por_produto(produtos_ecommerce)
     return sum(custo_por_produto)
 
+
 def formatar_custo(custo):
-    return 'R${:_.2f}'.format(custo).replace('.', ',').replace('_', '.')
+    return "R${:_.2f}".format(custo).replace(".", ",").replace("_", ".")
+
 
 custo_estoque_sem_ajuste = calcular_custo_de_estoque(produtos_ecommerce)
-print(f'Custo de estoque sem aplicação de imposto: {formatar_custo(custo_estoque_sem_ajuste)}')
+print(
+    f"Custo de estoque sem aplicação de imposto: {formatar_custo(custo_estoque_sem_ajuste)}"
+)
+
 
 def calcule_novo_preco(lista):
     for i in range(len(lista)):
-      novo_custo = round(lista[i][1] * 1.1)
-      lista[i][1] = novo_custo
+        novo_custo = round(lista[i][1] * 1.1)
+        lista[i][1] = novo_custo
+
 
 calcule_novo_preco(produtos_ecommerce)
-print('Lista ajustada ao imposto: {}'.format(produtos_ecommerce))
+print("Lista ajustada ao imposto: {}".format(produtos_ecommerce))
 
 custo_estoque_com_ajuste = calcular_custo_de_estoque(produtos_ecommerce)
-print(f'Custo de estoque com ajuste de imposto: {formatar_custo(custo_estoque_com_ajuste)}')
+print(
+    f"Custo de estoque com ajuste de imposto: {formatar_custo(custo_estoque_com_ajuste)}"
+)
 
-diferenca_custo_de_estoque = custo_estoque_com_ajuste - custo_estoque_sem_ajuste
-print(f'O aumento do custo de estoque para a empresa será de: {formatar_custo(diferenca_custo_de_estoque)}')
+diferenca_custo_de_estoque = (
+    custo_estoque_com_ajuste - custo_estoque_sem_ajuste
+)
+print(
+    f"O aumento do custo de estoque para a empresa será de: {formatar_custo(diferenca_custo_de_estoque)}"
+)

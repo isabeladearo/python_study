@@ -11,12 +11,12 @@
 
 meta = 10000
 vendas = [
-    ['João', 15000],
-    ['Julia', 27000],
-    ['Marcus', 9900],
-    ['Maria', 3750],
-    ['Ana', 10300],
-    ['Alon', 7870],
+    ["João", 15000],
+    ["Julia", 27000],
+    ["Marcus", 9900],
+    ["Maria", 3750],
+    ["Ana", 10300],
+    ["Alon", 7870],
 ]
 
 vendedores = []
@@ -25,10 +25,10 @@ for venda in vendas:
     if venda[1] >= meta:
         vendedores.append(venda)
 
-porcentagem = len(vendedores)/len(vendas)
-print('{:.0%} bateram a meta'.format(porcentagem))
+porcentagem = len(vendedores) / len(vendas)
+print("{:.0%} bateram a meta".format(porcentagem))
 
-vendedor = ''
+vendedor = ""
 valor = 0
 
 for venda in vendas:
@@ -36,4 +36,8 @@ for venda in vendas:
         vendedor = venda[0]
         valor = venda[1]
 
-print('{} foi o vendedor que bateu a maior meta: de R$ {:.2f}'.format(vendedor, valor))
+print(
+    "{} foi o vendedor que bateu a maior meta: de R$ {:.2f}".format(
+        vendedor, valor
+    )
+)

@@ -20,4 +20,3 @@ for i in range(qnt_de_hospedes):
     lista_de_hospedes.append(hospede)
 
 print(lista_de_hospedes)
-

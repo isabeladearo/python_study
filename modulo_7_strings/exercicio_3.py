@@ -13,14 +13,14 @@
 # Obs: Pode te ajudar lembrar do método .find da aula de Métodos de String. Você pode testar o que ele dá como resposta caso ele não encontre um item dentro da string
 # """
 
-nome = input('Insira o seu nome:')
-email = input('Insira o seu email:')
+nome = input("Insira o seu nome:")
+email = input("Insira o seu email:")
 
 if email and nome:
-    index = email.find('@')
-    if index != -1 and '.' in email[index:]:
-        print(f'{nome}, {email}')
+    index = email.find("@")
+    if index != -1 and "." in email[index:]:
+        print(f"{nome}, {email}")
     else:
-        print('E-mail inválido')
+        print("E-mail inválido")
 else:
-    print('Dados inválidos, preencha corretamente')
+    print("Dados inválidos, preencha corretamente")

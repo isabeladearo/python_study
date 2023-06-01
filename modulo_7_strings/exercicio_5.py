@@ -6,12 +6,16 @@
 # Telefone corrigido sem formatação: 34610133
 # Telefone corrigido com formatação: 3461-0133
 
-numero = input('Insira o número de telefone:').strip().replace('-', '')
+numero = input("Insira o número de telefone:").strip().replace("-", "")
 
 if len(numero) == 7:
-    print('Telefone possui 7 dígitos. Vou acrescentar o digito três na frente.')
+    print(
+        "Telefone possui 7 dígitos. Vou acrescentar o digito três na frente."
+    )
     novo_numero = f"3{numero}"
-    print(f'Telefone corrigido sem formatação: {novo_numero}')
-    print(f'Telefone corrigido com formatação: {novo_numero[:4]}-{novo_numero[4:]}')
+    print(f"Telefone corrigido sem formatação: {novo_numero}")
+    print(
+        f"Telefone corrigido com formatação: {novo_numero[:4]}-{novo_numero[4:]}"
+    )
 else:
-    print('Insira um número com 7 dīgitos')
+    print("Insira um número com 7 dīgitos")

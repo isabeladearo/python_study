@@ -7,13 +7,14 @@ vendas_2sem = [19850, 20120, 17540, 15555, 49051, 9650]
 
 vendas_totais = vendas_1sem + vendas_2sem
 
+
 def extrai_maior_valor(vendas):
     maior_valor = max(vendas)
     top3.append(maior_valor)
     vendas_totais.remove(maior_valor)
 
+
 for i in range(3):
     extrai_maior_valor(vendas_totais)
 
 print(top3)
-
